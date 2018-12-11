@@ -32,7 +32,7 @@ public class PlayerCharacter : MonoBehaviour
     private float horizontalInput;
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
-    private Checkpoint currentCheckpoint;
+    //private Checkpoint currentCheckpoint;
 	
 	// Update is called once per frame
 	void Update ()
@@ -87,23 +87,23 @@ public class PlayerCharacter : MonoBehaviour
         rb2d.velocity = clampedVelocity;
     }
 
-    public void Respawn()
-    {
-        if (currentCheckpoint == null)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else
-        {
-            rb2d.velocity = Vector2.zero;
-            transform.position = currentCheckpoint.transform.position;
-        }     
-    }
+    //public void Respawn()
+    //{
+    //    if (currentCheckpoint == null)
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //    else
+    //    {
+    //        rb2d.velocity = Vector2.zero;
+    //        transform.position = currentCheckpoint.transform.position;
+    //    }     
+    //}
 
-    public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
-    {
-        if (currentCheckpoint != null)
-            currentCheckpoint.SetIsActivated(false);
+    //public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
+    //{
+    //    if (currentCheckpoint != null)
+    //        currentCheckpoint.SetIsActivated(false);
 
-        currentCheckpoint = newCurrentCheckpoint;
-        currentCheckpoint.SetIsActivated(true);
-    }
+    //    currentCheckpoint = newCurrentCheckpoint;
+    //    currentCheckpoint.SetIsActivated(true);
+    //}
 }

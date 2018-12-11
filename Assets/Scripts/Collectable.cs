@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    private static int coinCount;
+    private static int pwrUpCount;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            coinCount++;
-            Debug.Log("Coin count: " + coinCount);
+            pwrUpCount++;
+            Debug.Log("Power-Up count: " + pwrUpCount);
             Destroy(gameObject);
         }
     }
